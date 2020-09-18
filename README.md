@@ -74,11 +74,7 @@ extension ViewController: WKNavigationDelegate {
 ```
 
 
-<<<<<<< HEAD
 ##### Get the access token
-=======
-##### Get access token
->>>>>>> 3f9b1d090dcbe36759cc1fb04563a85230cf2033
 
 ```swift
 
@@ -106,10 +102,6 @@ func userContentController(_ userContentController: WKUserContentController, did
 ### License
 
 ```
-<<<<<<< HEAD
-=======
-© 2017 by Make A Change.
->>>>>>> 3f9b1d090dcbe36759cc1fb04563a85230cf2033
 Proudly created with viWave.com
 ```
 
