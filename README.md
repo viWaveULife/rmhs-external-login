@@ -102,7 +102,6 @@ func userContentController(_ userContentController: WKUserContentController, did
 ### License
 
 ```
-© 2017 by Make A Change.
 Proudly created with viWave.com
 ```
 
