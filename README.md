@@ -6,6 +6,36 @@ Partners can obtain App users’ physical measurement records stored in RMHs thr
 
 ### Android
 
+``` kotlin
+companion object {
+    private const val ROSSMAX_LOGIN_URL = <service-url>
+    private const val ROSSMAX_SERVICE_ID = <service-id>
+    private const val ROSSMAX_USER_AGENT_STRING = "RossmaxHealthStyleService Android"
+}
+```
+##### Append rossmax user agent string to userAgentString
+``` kotlin
+val webView: WebView
+webView.settings.userAgentString = "$userAgentString $ROSSMAX_USER_AGENT_STRING"
+```
+##### EvaluateJavascript with the rossmax service id
+``` kotlin
+webView.evaluateJavascript("javascript:setServiceId('$ROSSMAX_SERVICE_ID')") {}
+```
+##### AddJavascriptInterface with the interfaceName 'Android'
+``` kotlin
+webView.addJavascriptInterface(object {
+        @JavascriptInterface
+        fun onAccessTokenReceived(token: String) {
+			// get the access token here
+        }
+    }, "Android")
+```
+##### load rossmax login url
+``` kotlin
+webView.loadUrl(ROSSMAX_LOGIN_URL)
+```
+
 ### iOS
 
 ##### Application Information Service
