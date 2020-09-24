@@ -10,7 +10,9 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        private const val LOGIN_URL = "https://rossmax-care-dev.web.app/outer_service_login"
+        private const val ROSSMAX_LOGIN_URL = "https://rossmax-care-dev.web.app/outer_service_login"
+        private const val ROSSMAX_USER_AGENT_STRING = "RossmaxHealthStyleService Android"
+        private const val ROSSMAX_SERVICE_ID = "oService1"
     }
 
     private lateinit var progressBar: ProgressBar
@@ -38,7 +40,8 @@ class MainActivity : AppCompatActivity() {
                 setSupportZoom(true)
                 useWideViewPort = true
                 layoutAlgorithm = WebSettings.LayoutAlgorithm.NORMAL
-                userAgentString = "$userAgentString RossmaxHealthStyleService Android"
+                // Append rossmax user agent string to userAgentString
+                userAgentString = "$userAgentString $ROSSMAX_USER_AGENT_STRING"
             }
             isVerticalScrollBarEnabled = true
             isHorizontalScrollBarEnabled = true
@@ -56,20 +59,24 @@ class MainActivity : AppCompatActivity() {
                     progressBar.progress = newProgress
                     if (progressBar.progress == 100) {
                         progressBar.visibility = View.GONE
-                        webView.evaluateJavascript("javascript:setServiceId('oService1')") {}
+                        // evaluateJavascript with the rossmax service id
+                        webView.evaluateJavascript("javascript:setServiceId('$ROSSMAX_SERVICE_ID')") {}
                     }
                 }
             }
+            // addJavascriptInterface with the interfaceName 'Android'
             addJavascriptInterface(object {
                 @JavascriptInterface
                 fun onAccessTokenReceived(token: String) {
+                    // get the access token here
                     runOnUiThread {
                         Toast.makeText(this@MainActivity, "token >>> $token", Toast.LENGTH_SHORT)
                             .show()
                     }
                 }
             }, "Android")
-            loadUrl(LOGIN_URL)
+            // load rossmax login url
+            loadUrl(ROSSMAX_LOGIN_URL)
         }
     }
 }
