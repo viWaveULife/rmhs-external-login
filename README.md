@@ -1,8 +1,6 @@
-# Rossmax Health Style External Login Example Projects
+# Examples of Accessing Rossmax Health Style Portal
 
-This project provides examples to demonstrate how to enable RMHs partners to implement it in their own App, so that users of the App can successfully log in to the RMHs membership system and allow the App to obtain an access token. 
-
-Partners can obtain App users’ physical measurement records stored in RMHs through the access token.
+This project provides examples to demonstrate how the RMHs partners could enable RMHs membership system to obtain application users’ physical measurement records stored in RMHs through the access token.
 
 ### Android
 
@@ -121,7 +119,7 @@ func userContentController(_ userContentController: WKUserContentController, did
         // Timing to display UI from BUSY to not.
         print("Show indicator stop.")
     default:
-        // After obtaining the access tokn, you can save it and transfer to another view.
+        // After obtaining the access token, you can save it and transfer to another view.
     }
 
 }
@@ -132,7 +130,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 ### License
 
 ```
-Proudly created with viWave.com
+Proudly created by viWave.com
 ```
 
 ### Contact us
