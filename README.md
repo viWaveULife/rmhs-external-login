@@ -140,7 +140,7 @@ Proudly created by viWave.com
 
 ### Contact us
 
-![viWave.com](https://static.wixstatic.com/media/6b2605_f248ecb6e06543f793aa4cde1291c81d~mv2.png/v1/fill/w_520,h_148,al_c,lg_1/logo_5.png)
+![viWave.com](https://github.com/viWaveULife/rmhs-external-login/blob/master/viWaveULife_logo_Eng_name.jpg)
 
 T: +886-281781002
 
