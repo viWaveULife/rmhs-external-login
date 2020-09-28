@@ -3,7 +3,7 @@
 This project provides examples to demonstrate how the RMHs partners could enable RMHs membership system to obtain application users’ physical measurement records stored in RMHs through the access token.
 
 
-### Service Activity / Flow。
+### Service Activity / Flow
 ![Service Activity](https://github.com/viWaveULife/rmhs-external-login/blob/master/activity.jpg)
 
 
