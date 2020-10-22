@@ -131,6 +131,45 @@ func userContentController(_ userContentController: WKUserContentController, did
 
 ```
 
+### Web
+
+```html
+
+<html>
+
+<title>{{Your page's title}}</title>
+
+<body>
+    <!-- 
+    To replace 'src' and 'serviceId' values to yours.
+    -->
+    <iframe src="https://rossmax-care-dev.web.app/outer_service_login?serviceId=oService1" title="Outer Service Login" width="100%" height="100%"></iframe>
+</body>
+
+<script>
+
+    if (window.addEventListener) {
+        window.addEventListener("message", onMessage, false);        
+    } else if (window.attachEvent) {
+        window.attachEvent("onmessage", onMessage, false);
+    }
+
+    function onMessage(event) {
+        var data = event.data;
+        if (typeof(window[data.func]) == "function") {
+            window[data.func].call(null, data.message);
+        }
+    }
+
+    function tokenFromRossmax(token) {
+        // You can get token here.
+    }
+
+</script>
+
+</html>
+
+```
 
 ### License
 
